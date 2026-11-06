@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* ── Colour tokens ── */
+  --color-ink:        #111111;
+  --color-paper:      #F7F6F2;
+  --color-white:      #FFFFFF;
+  --color-signal-red: #FF3B4F;
+  --color-deep-red:   #B7132A;
+  --color-slate:      #676767;
+  --color-line:       #DEDCD7;
+
+  /* ── Font families ── */
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-body:    "DM Sans", sans-serif;
+
+  /* ── Type scale (desktop 1440px) ── */
+  --text-h1:    115px;
+  --text-h2:     72px;
+  --text-h3:     33px;
+  --text-lead:   22px;
+  --text-body:   18px;
+  --text-label:  12px;
+  --text-btn:    15px;
+  --text-hero:   clamp(52px, min(8.4vw, 11.2vh), 115px);
+}
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Display headings ── */
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.93;
+  letter-spacing: -0.025em;
+}
+
+/* ── Micro label ── */
+.label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Marquee ── */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Utility: no scroll bleed on overflow-hidden text reveals ── */
+.clip-reveal { overflow: hidden; }
